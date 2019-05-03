@@ -47,9 +47,9 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = new Vector2(0f, currentVelocity.y);
         }
 
-        if (Input.GetButton("Jump") && isGrounded) // JUMP
+        if (Input.GetButtonDown("Jump") && isGrounded) // JUMP
         {
-            myRigidbody.velocity = new Vector2(currentVelocity.x, jumpSpeed);
+            myRigidbody.velocity = Vector2.up * jumpSpeed;
         }
 
         myAnimator.SetFloat("Speed", Math.Abs(currentVelocity.x));
