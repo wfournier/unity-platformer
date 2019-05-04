@@ -899,7 +899,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c84d9d911f2bdaf44a5c2eafe54d407c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitToRespawn: 2
+  waitToRespawn: 1
   player: {fileID: 0}
 --- !u!4 &1674377674
 Transform:
