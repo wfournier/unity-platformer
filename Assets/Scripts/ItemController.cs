@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class ItemController : MonoBehaviour
 {
+
+    #region Private/Protected Methods -------------------------------------
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -24,5 +23,7 @@ public class ItemController : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    #endregion
 
 }

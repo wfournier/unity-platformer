@@ -1,24 +1,29 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class CameraController : MonoBehaviour
 {
+
+    #region Declarations --------------------------------------------------
 
     public GameObject target;
     public float followAhead;
     public float smoothing;
 
     private Vector3 targetPosition;
-    
+
+    #endregion
+
+
+    #region Private/Protected Methods -------------------------------------
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Vector3 currentPosition = transform.position;
         targetPosition = new Vector3(target.transform.position.x, currentPosition.y, currentPosition.z);
@@ -34,4 +39,7 @@ public class CameraController : MonoBehaviour
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
     }
+
+    #endregion
+
 }

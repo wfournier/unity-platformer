@@ -1,20 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class DestroyOverTime : MonoBehaviour
 {
 
+    #region Declarations --------------------------------------------------
+
     public float lifeTime;
-    
+
+    #endregion
+
+
+    #region Private/Protected Methods -------------------------------------
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         lifeTime -= Time.deltaTime;
 
@@ -23,4 +28,7 @@ public class DestroyOverTime : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    #endregion
+
 }

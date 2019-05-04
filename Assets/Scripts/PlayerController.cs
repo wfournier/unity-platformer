@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class PlayerController : MonoBehaviour
 {
+
+    #region Declarations --------------------------------------------------
 
     private Rigidbody2D myRigidbody;
     private Animator myAnimator;
@@ -18,14 +18,21 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
+    public LayerMask killZoneLayer;
     public bool isGrounded;
+    public bool isInKillZone;
 
     public Vector3 respawnPosition;
 
     public LevelManager levelManager;
 
+    #endregion
+
+
+    #region Private/Protected Methods -------------------------------------
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -34,10 +41,11 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         currentVelocity = myRigidbody.velocity;
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isInKillZone = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, killZoneLayer);
 
         if (Input.GetAxisRaw("Horizontal") > 0f) // RIGHT
         {
@@ -63,7 +71,7 @@ public class PlayerController : MonoBehaviour
         myAnimator.SetBool("Grounded", isGrounded);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("KillZone"))
         {
@@ -75,5 +83,23 @@ public class PlayerController : MonoBehaviour
             respawnPosition = other.transform.position;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.parent = null;
+        }
+    }
+
+    #endregion
 
 }
