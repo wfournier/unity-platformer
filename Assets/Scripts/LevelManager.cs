@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    private PlayerController player;
 
     public float waitToRespawn;
-    public PlayerController player;
+    public GameObject deathEffect;
     
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,12 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(nameof(RespawnCo));
     }
 
-    public IEnumerator RespawnCo()
+    private IEnumerator RespawnCo()
     {
+        Transform playerTransform = player.transform;
+        
         player.gameObject.SetActive(false);
+        Instantiate(deathEffect, playerTransform.position, playerTransform.rotation);
         
         yield return new WaitForSeconds(waitToRespawn);
         
