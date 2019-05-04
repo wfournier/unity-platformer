@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 1587973784}
   m_Layer: 0
   m_Name: Moving Platform 1
-  m_TagString: MovingPlatform
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -955,7 +955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587973782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.505, y: 0.029, z: -4.635742}
+  m_LocalPosition: {x: 16.34, y: -1.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7288032191696849106}
@@ -1478,6 +1478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thin Platform 1x3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7691097644986005079, guid: ac8cd37cda75e8d4f9a22c17cd46c833,
+        type: 3}
+      propertyPath: m_TagString
+      value: MovingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 7288032191696849106, guid: ac8cd37cda75e8d4f9a22c17cd46c833,
         type: 3}
