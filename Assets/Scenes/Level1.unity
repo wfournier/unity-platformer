@@ -2131,12 +2131,15 @@ MonoBehaviour:
   rigidBody: {fileID: 0}
   animator: {fileID: 0}
   size: {x: 0, y: 0}
-  feetTouchCheck: {fileID: 1686804212}
-  feetTouchCheckRadius: 0.25
+  feetContactBox: {x: 0, y: 0}
+  groundedSkin: 0.05
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
   killZoneLayer:
     serializedVersion: 2
     m_Bits: 1024
-  isGrounded: 0
+  grounded: 0
   isInKillZone: 0
   respawnPosition: {x: 0, y: 0, z: 0}
   levelManager: {fileID: 0}
@@ -2199,10 +2202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpVelocity: 7.5
-  groundedSkin: 0.05
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!1 &1910892731
 GameObject:
   m_ObjectHideFlags: 0
