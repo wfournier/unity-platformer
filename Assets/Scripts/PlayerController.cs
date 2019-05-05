@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidBody;
     [HideInInspector]
     public Animator animator;
+    [HideInInspector]
+    public Vector2 size;
 
     private Vector2 currentVelocity;
     public Transform feetTouchCheck;
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        size = GetComponent<BoxCollider2D>().size;
         respawnPosition = transform.position;
         levelManager = FindObjectOfType<LevelManager>();
     }

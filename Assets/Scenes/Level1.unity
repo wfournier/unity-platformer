@@ -1996,8 +1996,6 @@ GameObject:
   - component: {fileID: 1864110962}
   - component: {fileID: 1864110964}
   - component: {fileID: 1864110968}
-  - component: {fileID: 1864110971}
-  - component: {fileID: 1864110970}
   - component: {fileID: 1864110969}
   - component: {fileID: 1864110966}
   - component: {fileID: 1864110965}
@@ -2132,6 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 0}
   animator: {fileID: 0}
+  size: {x: 0, y: 0}
   feetTouchCheck: {fileID: 1686804212}
   feetTouchCheckRadius: 0.25
   killZoneLayer:
@@ -2194,36 +2193,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864110959}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07b87b50956ab2441966d3cd39b98c3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1864110970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864110959}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58088b6349e416748bea1b829da79c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1864110971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1864110959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5947d12542104394db18a8aef3124688, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpVelocity: 8
+  jumpVelocity: 7.5
+  groundedSkin: 0.05
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1910892731
 GameObject:
   m_ObjectHideFlags: 0
