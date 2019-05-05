@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    #region Declarations --------------------------------------------------
+
     private PlayerController player;
 
     private bool moveLeftRequest;
@@ -12,8 +13,13 @@ public class PlayerMovement : MonoBehaviour
 
     [Range(1, 10)]
     public float moveSpeed;
-    
-    void Start()
+
+    #endregion
+
+
+    #region Private/Protected Methods -------------------------------------
+
+    private void Start()
     {
         player = FindObjectOfType<PlayerController>();
     }
@@ -38,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1f, 1f, 1f);
 
             moveLeftRequest = false;
-        } 
+        }
         else if (moveRightRequest)
         {
             player.rigidBody.velocity = new Vector2(moveSpeed, player.rigidBody.velocity.y);
@@ -51,5 +57,7 @@ public class PlayerMovement : MonoBehaviour
             player.rigidBody.velocity = new Vector2(0f, player.rigidBody.velocity.y);
         }
     }
+
+    #endregion
 
 }

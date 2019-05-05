@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
     [HideInInspector]
     public Vector2 size;
+    [HideInInspector]
+    public LevelManager levelManager;
 
     public float groundedSkin = 0.05f;
     public LayerMask groundLayer;
@@ -25,12 +27,11 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 respawnPosition;
 
-    public LevelManager levelManager;
-
     #endregion
 
 
     #region Private/Protected Methods -------------------------------------
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();

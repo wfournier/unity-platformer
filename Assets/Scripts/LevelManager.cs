@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Numerics;
+﻿using System;
+using System.Collections;
 using UnityEngine;
-using Quaternion = UnityEngine.Quaternion;
-using Vector3 = UnityEngine.Vector3;
+using UnityEngine.UI;
 
 
 public class LevelManager : MonoBehaviour
@@ -16,6 +15,12 @@ public class LevelManager : MonoBehaviour
     public float waitToRespawn;
     public GameObject deathEffect;
 
+    public int coinCount;
+    public int keyCount;
+
+    public Text coinText;
+    public Text keyText;
+
     #endregion
 
 
@@ -24,6 +29,38 @@ public class LevelManager : MonoBehaviour
     public void Respawn()
     {
         StartCoroutine(nameof(RespawnCo));
+    }
+
+    public void AddCoins(int count)
+    {
+        SetCoinCount(coinCount + count);
+    }
+
+    public void RemoveCoins(int count)
+    {
+        SetCoinCount(coinCount - count);
+    }
+
+    public void SetCoinCount(int count)
+    {
+        coinCount = count;
+        UpdateCoinText();
+    }
+
+    public void AddKey(int count)
+    {
+        SetKeyCount(keyCount + count);
+    }
+
+    public void RemoveKey(int count)
+    {
+        SetKeyCount(keyCount - count);
+    }
+
+    public void SetKeyCount(int count)
+    {
+        keyCount = count;
+        UpdateKeyText();
     }
 
     #endregion
@@ -36,18 +73,19 @@ public class LevelManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         mainCamera = Camera.main;
+
+        UpdateUICounters();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        
     }
 
     private IEnumerator RespawnCo()
     {
         Transform playerTransform = player.transform;
-        
+
         Vector3 playerPosition = playerTransform.position;
         Quaternion playerRotation = playerTransform.rotation;
 
@@ -61,6 +99,24 @@ public class LevelManager : MonoBehaviour
 
         player.transform.position = player.respawnPosition;
         player.gameObject.SetActive(true);
+
+        SetCoinCount((int) Math.Ceiling((float) coinCount / 2));
+    }
+
+    private void UpdateCoinText()
+    {
+        coinText.text = $"{coinCount}";
+    }
+
+    private void UpdateKeyText()
+    {
+        keyText.text = $"{keyCount}";
+    }
+
+    private void UpdateUICounters()
+    {
+        UpdateCoinText();
+        UpdateKeyText();
     }
 
     #endregion

@@ -1,14 +1,24 @@
 ﻿using UnityEngine;
 
 
-public class ItemController : MonoBehaviour
+public class Coin : MonoBehaviour
 {
+
+    #region Declarations --------------------------------------------------
+
+    private LevelManager levelManager;
+
+    public int coinValue = 1;
+
+    #endregion
+
 
     #region Private/Protected Methods -------------------------------------
 
     // Start is called before the first frame update
     private void Start()
     {
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -20,7 +30,8 @@ public class ItemController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            levelManager.AddCoins(coinValue);
+            Destroy(gameObject);
         }
     }
 

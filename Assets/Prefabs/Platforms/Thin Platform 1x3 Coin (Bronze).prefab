@@ -169,8 +169,8 @@ GameObject:
   - component: {fileID: 7288032191696849106}
   - component: {fileID: 2387868053718411882}
   m_Layer: 8
-  m_Name: Thin Platform 1x3 Coin
-  m_TagString: Untagged
+  m_Name: Thin Platform 1x3 Coin (Bronze)
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +308,7 @@ PrefabInstance:
     - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
         type: 3}
       propertyPath: m_Name
-      value: Coin
+      value: Coin (Bronze)
       objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
         type: 3}
