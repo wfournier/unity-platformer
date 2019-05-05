@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 
-public class Jump : MonoBehaviour
+public class PlayerJump : MonoBehaviour
 {
 
     #region Declarations --------------------------------------------------
@@ -24,9 +24,9 @@ public class Jump : MonoBehaviour
 
     private void Update()
     {
-        player.animator.SetBool("Grounded", player.grounded);
+        player.animator.SetBool("Grounded", player.isGrounded);
 
-        if (Input.GetButtonDown("Jump") && player.grounded)
+        if (Input.GetButtonDown("Jump") && player.isGrounded)
         {
             jumpRequest = true;
         }
@@ -39,7 +39,7 @@ public class Jump : MonoBehaviour
             player.rigidBody.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
 
             jumpRequest = false;
-            player.grounded = false;
+            player.isGrounded = false;
         }
     }
 

@@ -7,21 +7,20 @@ public class PlayerController : MonoBehaviour
 
     #region Declarations --------------------------------------------------
 
+    private Vector2 currentVelocity;
+    private Vector2 feetContactBox;
+
     [HideInInspector]
     public Rigidbody2D rigidBody;
     [HideInInspector]
     public Animator animator;
     [HideInInspector]
     public Vector2 size;
-    [HideInInspector]
-    public Vector2 feetContactBox;
-
-    private Vector2 currentVelocity;
 
     public float groundedSkin = 0.05f;
     public LayerMask groundLayer;
     public LayerMask killZoneLayer;
-    public bool grounded;
+    public bool isGrounded;
     public bool isInKillZone;
 
     public Vector3 respawnPosition;
@@ -32,23 +31,16 @@ public class PlayerController : MonoBehaviour
 
 
     #region Private/Protected Methods -------------------------------------
-
     private void Awake()
-    {
-        feetContactBox = new Vector2(size.x, groundedSkin);
-    }
-
-    // Start is called before the first frame update
-    private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         size = GetComponent<BoxCollider2D>().size;
         respawnPosition = transform.position;
         levelManager = FindObjectOfType<LevelManager>();
+        feetContactBox = new Vector2(size.x, groundedSkin);
     }
 
-    // Update is called once per frame
     private void Update()
     {
         animator.SetFloat("SpeedX", Math.Abs(rigidBody.velocity.x));
@@ -58,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 boxCenter = (Vector2) transform.position + (size.y + feetContactBox.y) * 0.5f * Vector2.down;
 
-        grounded = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, groundLayer);
+        isGrounded = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, groundLayer);
         isInKillZone = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, killZoneLayer);
     }
 
