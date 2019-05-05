@@ -21,15 +21,19 @@ public class BetterJump : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime * Vector2.up;
+            rb.gravityScale = fallMultiplier;
         }
         else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
         {
-            rb.velocity += Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime * Vector2.up;
+            rb.gravityScale = lowJumpMultiplier;
+        }
+        else
+        {
+            rb.gravityScale = 1f;
         }
     }
 

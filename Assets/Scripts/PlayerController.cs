@@ -7,14 +7,12 @@ public class PlayerController : MonoBehaviour
 
     #region Declarations --------------------------------------------------
 
-    private Rigidbody2D myRigidbody;
-    private Animator myAnimator;
+    [HideInInspector]
+    public Rigidbody2D rigidBody;
+    [HideInInspector]
+    public Animator animator;
 
     private Vector2 currentVelocity;
-
-    public float moveSpeed;
-    public float jumpSpeed;
-
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask groundLayer;
@@ -34,8 +32,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         respawnPosition = transform.position;
         levelManager = FindObjectOfType<LevelManager>();
     }
@@ -43,32 +41,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        currentVelocity = myRigidbody.velocity;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         isInKillZone = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, killZoneLayer);
 
-        if (Input.GetAxisRaw("Horizontal") > 0f) // RIGHT
-        {
-            myRigidbody.velocity = new Vector2(moveSpeed, currentVelocity.y);
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0f) // LEFT
-        {
-            myRigidbody.velocity = new Vector2(-moveSpeed, currentVelocity.y);
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else // NEUTRAL
-        {
-            myRigidbody.velocity = new Vector2(0f, currentVelocity.y);
-        }
-
-        if (Input.GetButtonDown("Jump") && isGrounded) // JUMP
-        {
-            myRigidbody.velocity = Vector2.up * jumpSpeed;
-        }
-
-        myAnimator.SetFloat("Speed", Math.Abs(currentVelocity.x));
-        myAnimator.SetBool("Grounded", isGrounded);
+        animator.SetFloat("SpeedX", Math.Abs(rigidBody.velocity.x));
     }
 
     private void OnTriggerEnter2D(Collider2D other)
