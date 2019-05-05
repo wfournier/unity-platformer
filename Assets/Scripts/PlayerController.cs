@@ -13,9 +13,8 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     private Vector2 currentVelocity;
-    public Transform groundCheck;
-    public float groundCheckRadius;
-    public LayerMask groundLayer;
+    public Transform feetTouchCheck;
+    public float feetTouchCheckRadius;
     public LayerMask killZoneLayer;
     public bool isGrounded;
     public bool isInKillZone;
@@ -41,7 +40,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        isInKillZone = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, killZoneLayer);
+        isInKillZone = Physics2D.OverlapCircle(feetTouchCheck.position, feetTouchCheckRadius, killZoneLayer);
 
         animator.SetFloat("SpeedX", Math.Abs(rigidBody.velocity.x));
     }
