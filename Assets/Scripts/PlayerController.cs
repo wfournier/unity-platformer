@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask killZoneLayer;
     public bool isGrounded;
     public bool isInKillZone;
+    public bool invulnerable;
+
+    [Range(0.1f, 10f)]
+    public float invulnerabilityWindow;
 
     public Vector3 respawnPosition;
 

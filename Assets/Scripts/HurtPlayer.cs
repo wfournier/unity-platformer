@@ -28,7 +28,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelManager.Respawn();
+            levelManager.RemoveHealth(1);
         }
     }
 

@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
     public float waitToRespawn;
     public GameObject deathEffect;
 
+    public HealthBar healthBar;
+
     public int coinCount;
     public int keyCount;
 
@@ -26,9 +28,32 @@ public class LevelManager : MonoBehaviour
 
     #region Public Methods ------------------------------------------------
 
+    public void AddHealth(int value)
+    {
+        healthBar.Add(value);
+    }
+
+    public void RemoveHealth(int value)
+    {
+        if (player.invulnerable) return;
+
+        healthBar.Remove(value);
+        StartCoroutine(InvulnerableCo());
+    }
+
+    public void SetHealth(int value)
+    {
+        healthBar.Set(value);
+    }
+
+    public void SetHealthMax()
+    {
+        healthBar.Set(healthBar.totalHealth);
+    }
+
     public void Respawn()
     {
-        StartCoroutine(nameof(RespawnCo));
+        StartCoroutine(RespawnCo());
     }
 
     public void AddCoins(int count)
@@ -73,6 +98,7 @@ public class LevelManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerController>();
         mainCamera = Camera.main;
+        healthBar = FindObjectOfType<HealthBar>();
 
         UpdateUICounters();
     }
@@ -80,6 +106,18 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // if(!player.invulnerable && healthBar.currentHealth <= 0)
+        //     Respawn();
+    }
+
+    private IEnumerator InvulnerableCo()
+    {
+        player.invulnerable = true;
+        float window = healthBar.currentHealth <= 0 ? waitToRespawn + player.invulnerabilityWindow : player.invulnerabilityWindow;
+        
+        yield return new WaitForSeconds(window);
+
+        player.invulnerable = false;
     }
 
     private IEnumerator RespawnCo()
@@ -92,6 +130,7 @@ public class LevelManager : MonoBehaviour
         Vector3 cameraPosition = mainCamera.transform.position;
         Vector3 effectPosition = player.isInKillZone ? new Vector3(playerPosition.x, cameraPosition.y - mainCamera.orthographicSize) : playerPosition;
 
+        player.invulnerable = true;
         player.gameObject.SetActive(false);
         Instantiate(deathEffect, effectPosition, playerRotation);
 
@@ -100,6 +139,8 @@ public class LevelManager : MonoBehaviour
         player.transform.position = player.respawnPosition;
         player.gameObject.SetActive(true);
 
+        SetHealthMax();
+        player.invulnerable = false;
         SetCoinCount((int) Math.Ceiling((float) coinCount / 2));
     }
 
