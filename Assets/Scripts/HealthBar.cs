@@ -14,6 +14,7 @@ public class HealthBar : MonoBehaviour
     void Start()
     {
         hearts = FindObjectsOfType<HeartUI>().OrderBy(h => h.position);
+        Update(); // to make sure that the correct amount of health is set at the start (or else totalHealth and currentHealth default at 0)
     }
 
     void Update()
