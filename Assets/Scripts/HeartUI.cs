@@ -26,13 +26,11 @@ public class HeartUI : MonoBehaviour
 
     #region Private/Protected Methods -------------------------------------
 
-    // Start is called before the first frame update
     private void Start()
     {
         image = GetComponent<Image>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         value = (int) state;
@@ -59,7 +57,7 @@ public class HeartUI : MonoBehaviour
 
 public enum HeartState
 {
-
+    // The int value represents the amount of health represented by each heart state
     Full = 2,
     Half = 1,
     Empty = 0

@@ -46,16 +46,16 @@ public class HealthBar : MonoBehaviour
 
     private void UpdateStates()
     {
-        int fullHearts = (int) Math.Floor(currentHealth / (float) HeartState.Full);
+        int fullHearts = (int) Math.Floor(currentHealth / (float) HeartState.Full); // calculate the amount of hearts that need to be full
         bool oddHealth = currentHealth % (int) HeartState.Full != 0;
         
         foreach (HeartUI heart in hearts)
         {
-            if (heart.position <= fullHearts)
+            if (heart.position <= fullHearts) // starting from first heart, set to full until amount of full hearts is met
                 heart.state = HeartState.Full;
-            else if (oddHealth && heart.position == fullHearts + 1)
+            else if (oddHealth && heart.position == fullHearts + 1) // if amount of health is odd, set the next heart to half
                 heart.state = HeartState.Half;
-            else
+            else // otherwise, set all remaining hearts to empty
                 heart.state = HeartState.Empty;
         }
     }

@@ -15,13 +15,11 @@ public class Coin : MonoBehaviour
 
     #region Private/Protected Methods -------------------------------------
 
-    // Start is called before the first frame update
     private void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
     }

@@ -93,7 +93,6 @@ public class LevelManager : MonoBehaviour
 
     #region Private/Protected Methods -------------------------------------
 
-    // Start is called before the first frame update
     private void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -103,7 +102,6 @@ public class LevelManager : MonoBehaviour
         UpdateUICounters();
     }
 
-    // Update is called once per frame
     private void Update()
     {
         // if(!player.invulnerable && healthBar.currentHealth <= 0)
