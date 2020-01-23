@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 
-
 public class PlayerJump : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private PlayerController player;
-    private bool jumpRequest;
+    private PlayerController _player;
+    private bool _jumpRequest;
 
-    [Range(1, 10)]
-    public float jumpVelocity;
+    [Range(1, 10)] public float jumpVelocity;
 
     #endregion
 
@@ -19,30 +16,26 @@ public class PlayerJump : MonoBehaviour
 
     private void Awake()
     {
-        player = FindObjectOfType<PlayerController>();
+        _player = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
     {
-        player.animator.SetBool("Grounded", player.isGrounded);
+        _player.animator.SetBool("Grounded", _player.isGrounded);
 
-        if (Input.GetButtonDown("Jump") && player.isGrounded)
-        {
-            jumpRequest = true;
-        }
+        if (Input.GetButtonDown("Jump") && _player.isGrounded) _jumpRequest = true;
     }
 
     private void FixedUpdate()
     {
-        if (jumpRequest)
+        if (_jumpRequest)
         {
-            player.rigidBody.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
+            _player.rigidBody.AddForce(Vector2.up * jumpVelocity, ForceMode2D.Impulse);
 
-            jumpRequest = false;
-            player.isGrounded = false;
+            _jumpRequest = false;
+            _player.isGrounded = false;
         }
     }
 
     #endregion
-
 }

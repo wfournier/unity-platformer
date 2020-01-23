@@ -2,24 +2,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class HeartUI : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
-    
-    private Image image;
+
+    private Image _image;
 
     public Sprite full;
     public Sprite half;
     public Sprite empty;
     public HeartState state;
-    
-    [Range(1, 10)]
-    public int position;
-    
-    [HideInInspector]
-    public int value;
+
+    [Range(1, 10)] public int position;
+
+    [HideInInspector] public int value;
 
     #endregion
 
@@ -28,7 +24,7 @@ public class HeartUI : MonoBehaviour
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        _image = GetComponent<Image>();
     }
 
     private void Update()
@@ -37,13 +33,13 @@ public class HeartUI : MonoBehaviour
         switch (state)
         {
             case HeartState.Full:
-                image.sprite = full;
+                _image.sprite = full;
                 break;
             case HeartState.Half:
-                image.sprite = half;
+                _image.sprite = half;
                 break;
             case HeartState.Empty:
-                image.sprite = empty;
+                _image.sprite = empty;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -51,7 +47,6 @@ public class HeartUI : MonoBehaviour
     }
 
     #endregion
-
 }
 
 
@@ -61,5 +56,4 @@ public enum HeartState
     Full = 2,
     Half = 1,
     Empty = 0
-
 }

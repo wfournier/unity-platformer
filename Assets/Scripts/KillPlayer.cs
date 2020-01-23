@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
     #region Declarations --------------------------------------------------
 
-    private LevelManager levelManager;
+    private LevelManager _levelManager;
 
     #endregion
 
@@ -15,7 +13,7 @@ public class KillPlayer : MonoBehaviour
 
     private void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
+        _levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void Update()
@@ -24,10 +22,7 @@ public class KillPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            levelManager.RespawnPlayer();
-        }
+        if (other.CompareTag("Player")) _levelManager.RespawnPlayer();
     }
 
     #endregion

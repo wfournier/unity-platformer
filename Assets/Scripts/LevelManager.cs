@@ -3,14 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class LevelManager : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private PlayerController player;
-    private Camera mainCamera;
+    private PlayerController _player;
+    private Camera _mainCamera;
 
     public float waitToRespawn;
     public GameObject deathEffect;
@@ -35,7 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public void RemoveHealth(int value)
     {
-        if (player.invulnerable) return;
+        if (_player.invulnerable) return;
 
         healthBar.Remove(value);
         StartCoroutine(InvulnerableCo());
@@ -96,8 +94,8 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
-        mainCamera = Camera.main;
+        _player = FindObjectOfType<PlayerController>();
+        _mainCamera = Camera.main;
         healthBar = FindObjectOfType<HealthBar>();
 
         UpdateUICounters();
@@ -105,36 +103,38 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if(healthBar.currentHealth <= 0 && !player.dead)
+        if (healthBar.currentHealth <= 0 && !_player.dead)
             RespawnPlayer();
     }
 
     private IEnumerator InvulnerableCo()
     {
-        player.invulnerable = true;
-        
-        yield return new WaitForSeconds(player.invulnerabilityWindow);
+        _player.invulnerable = true;
 
-        player.invulnerable = false;
+        yield return new WaitForSeconds(_player.invulnerabilityWindow);
+
+        _player.invulnerable = false;
     }
 
     private IEnumerator RespawnPlayerCo()
     {
-        Transform playerTransform = player.transform;
+        var playerTransform = _player.transform;
 
-        Vector3 playerPosition = playerTransform.position;
-        Quaternion playerRotation = playerTransform.rotation;
+        var playerPosition = playerTransform.position;
+        var playerRotation = playerTransform.rotation;
 
-        Vector3 cameraPosition = mainCamera.transform.position;
-        Vector3 effectPosition = player.isInKillZone ? new Vector3(playerPosition.x, cameraPosition.y - mainCamera.orthographicSize) : playerPosition;
+        var cameraPosition = _mainCamera.transform.position;
+        var effectPosition = _player.isInKillZone
+            ? new Vector3(playerPosition.x, cameraPosition.y - _mainCamera.orthographicSize)
+            : playerPosition;
 
-        player.Kill();
+        _player.Kill();
         Instantiate(deathEffect, effectPosition, playerRotation);
 
         yield return new WaitForSeconds(waitToRespawn);
 
-        player.transform.position = player.respawnPosition;
-        player.Respawn();
+        _player.transform.position = _player.respawnPosition;
+        _player.Respawn();
 
         SetHealthMax();
         SetCoinCount((int) Math.Ceiling((float) coinCount / 2));
@@ -157,5 +157,4 @@ public class LevelManager : MonoBehaviour
     }
 
     #endregion
-
 }

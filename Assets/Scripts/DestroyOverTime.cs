@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-
 public class DestroyOverTime : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
     public float lifeTime;
@@ -23,12 +21,8 @@ public class DestroyOverTime : MonoBehaviour
     {
         lifeTime -= Time.deltaTime;
 
-        if (lifeTime <= 0f)
-        {
-            Destroy(gameObject);
-        }
+        if (lifeTime <= 0f) Destroy(gameObject);
     }
 
     #endregion
-
 }

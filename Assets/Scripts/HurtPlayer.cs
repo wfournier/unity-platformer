@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-
 public class HurtPlayer : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private LevelManager levelManager;
+    private LevelManager _levelManager;
     public int damage;
 
     #endregion
@@ -16,7 +14,7 @@ public class HurtPlayer : MonoBehaviour
 
     private void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
+        _levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void Update()
@@ -25,12 +23,8 @@ public class HurtPlayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            levelManager.RemoveHealth(damage);
-        }
+        if (other.CompareTag("Player")) _levelManager.RemoveHealth(damage);
     }
 
     #endregion
-
 }

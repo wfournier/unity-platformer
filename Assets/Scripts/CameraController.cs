@@ -1,16 +1,14 @@
 ﻿using UnityEngine;
 
-
 public class CameraController : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
     public GameObject target;
     public float followAhead;
     public float smoothing;
 
-    private Vector3 targetPosition;
+    private Vector3 _targetPosition;
 
     #endregion
 
@@ -25,21 +23,16 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Vector3 currentPosition = transform.position;
-        targetPosition = new Vector3(target.transform.position.x, currentPosition.y, currentPosition.z);
+        var currentPosition = transform.position;
+        _targetPosition = new Vector3(target.transform.position.x, currentPosition.y, currentPosition.z);
 
         if (target.transform.localScale.x > 0f)
-        {
-            targetPosition = new Vector3(targetPosition.x + followAhead, targetPosition.y, targetPosition.z);
-        }
+            _targetPosition = new Vector3(_targetPosition.x + followAhead, _targetPosition.y, _targetPosition.z);
         else
-        {
-            targetPosition = new Vector3(targetPosition.x - followAhead, targetPosition.y, targetPosition.z);
-        }
+            _targetPosition = new Vector3(_targetPosition.x - followAhead, _targetPosition.y, _targetPosition.z);
 
-        transform.position = Vector3.Lerp(transform.position, targetPosition, smoothing * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, _targetPosition, smoothing * Time.deltaTime);
     }
 
     #endregion
-
 }

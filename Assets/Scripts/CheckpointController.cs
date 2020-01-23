@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-
 public class CheckpointController : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
     public Sprite flagClosed;
@@ -11,7 +9,7 @@ public class CheckpointController : MonoBehaviour
 
     public bool active;
 
-    private SpriteRenderer spriteRenderer;
+    private SpriteRenderer _spriteRenderer;
 
     #endregion
 
@@ -21,7 +19,7 @@ public class CheckpointController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -33,11 +31,10 @@ public class CheckpointController : MonoBehaviour
     {
         if (!active && other.CompareTag("Player"))
         {
-            spriteRenderer.sprite = flagOpened;
+            _spriteRenderer.sprite = flagOpened;
             active = true;
         }
     }
 
     #endregion
-
 }

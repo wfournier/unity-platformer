@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 
-
 public class PlayerMovement : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private PlayerController player;
+    private PlayerController _player;
 
-    private bool moveLeftRequest;
-    private bool moveRightRequest;
+    private bool _moveLeftRequest;
+    private bool _moveRightRequest;
 
-    [Range(1, 10)]
-    public float moveSpeed;
+    [Range(1, 10)] public float moveSpeed;
 
     #endregion
 
@@ -21,43 +18,38 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        _player = FindObjectOfType<PlayerController>();
     }
 
     private void Update()
     {
         if (Input.GetAxisRaw("Horizontal") < 0f) // LEFT
-        {
-            moveLeftRequest = true;
-        }
+            _moveLeftRequest = true;
         else if (Input.GetAxisRaw("Horizontal") > 0f) // RIGHT
-        {
-            moveRightRequest = true;
-        }
+            _moveRightRequest = true;
     }
 
     private void FixedUpdate()
     {
-        if (moveLeftRequest)
+        if (_moveLeftRequest)
         {
-            player.rigidBody.velocity = new Vector2(-moveSpeed, player.rigidBody.velocity.y);
+            _player.rigidBody.velocity = new Vector2(-moveSpeed, _player.rigidBody.velocity.y);
             transform.localScale = new Vector3(-1f, 1f, 1f);
 
-            moveLeftRequest = false;
+            _moveLeftRequest = false;
         }
-        else if (moveRightRequest)
+        else if (_moveRightRequest)
         {
-            player.rigidBody.velocity = new Vector2(moveSpeed, player.rigidBody.velocity.y);
+            _player.rigidBody.velocity = new Vector2(moveSpeed, _player.rigidBody.velocity.y);
             transform.localScale = new Vector3(1f, 1f, 1f);
 
-            moveRightRequest = false;
+            _moveRightRequest = false;
         }
         else // NEUTRAL
         {
-            player.rigidBody.velocity = new Vector2(0f, player.rigidBody.velocity.y);
+            _player.rigidBody.velocity = new Vector2(0f, _player.rigidBody.velocity.y);
         }
     }
 
     #endregion
-
 }

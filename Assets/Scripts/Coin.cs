@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-
 public class Coin : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private LevelManager levelManager;
+    private LevelManager _levelManager;
 
     public int coinValue = 1;
 
@@ -17,7 +15,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
+        _levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void Update()
@@ -28,11 +26,10 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelManager.AddCoins(coinValue);
+            _levelManager.AddCoins(coinValue);
             Destroy(gameObject);
         }
     }
 
     #endregion
-
 }

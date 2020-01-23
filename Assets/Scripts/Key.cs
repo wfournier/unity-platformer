@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
 
-
 public class Key : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private LevelManager levelManager;
+    private LevelManager _levelManager;
 
     #endregion
 
@@ -15,7 +13,7 @@ public class Key : MonoBehaviour
 
     private void Start()
     {
-        levelManager = FindObjectOfType<LevelManager>();
+        _levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void Update()
@@ -26,11 +24,10 @@ public class Key : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelManager.AddKey(1);
+            _levelManager.AddKey(1);
             Destroy(gameObject);
         }
     }
 
     #endregion
-
 }

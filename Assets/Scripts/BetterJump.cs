@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 
-
 public class BetterJump : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
-    private Rigidbody2D rb;
+    private Rigidbody2D _rb;
 
     #endregion
 
@@ -18,25 +16,18 @@ public class BetterJump : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
     {
-        if (rb.velocity.y < 0)
-        {
-            rb.gravityScale = fallMultiplier;
-        }
-        else if (rb.velocity.y > 0 && !Input.GetButton("Jump"))
-        {
-            rb.gravityScale = lowJumpMultiplier;
-        }
+        if (_rb.velocity.y < 0)
+            _rb.gravityScale = fallMultiplier;
+        else if (_rb.velocity.y > 0 && !Input.GetButton("Jump"))
+            _rb.gravityScale = lowJumpMultiplier;
         else
-        {
-            rb.gravityScale = 1f;
-        }
+            _rb.gravityScale = 1f;
     }
 
     #endregion
-
 }

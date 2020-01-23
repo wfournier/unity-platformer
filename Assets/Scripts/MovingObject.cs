@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 
-
 public class MovingObject : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
     public GameObject objectToMove;
@@ -27,18 +25,13 @@ public class MovingObject : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        objectToMove.transform.position = Vector3.MoveTowards(objectToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
+        objectToMove.transform.position =
+            Vector3.MoveTowards(objectToMove.transform.position, currentTarget, moveSpeed * Time.deltaTime);
 
         if (objectToMove.transform.position == endPoint.position)
-        {
             currentTarget = startPoint.position;
-        }
-        else if (objectToMove.transform.position == startPoint.position)
-        {
-            currentTarget = endPoint.position;
-        }
+        else if (objectToMove.transform.position == startPoint.position) currentTarget = endPoint.position;
     }
 
     #endregion
-
 }

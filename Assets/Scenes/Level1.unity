@@ -225,11 +225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 699260472055963235, guid: 727341da5d647444e8ce5f971e8f7fe7,
-        type: 3}
-      propertyPath: m_Name
-      value: Platform 1x7
-      objectReference: {fileID: 0}
     - target: {fileID: 699260472055963233, guid: 727341da5d647444e8ce5f971e8f7fe7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -285,6 +280,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 699260472055963235, guid: 727341da5d647444e8ce5f971e8f7fe7,
+        type: 3}
+      propertyPath: m_Name
+      value: Platform 1x7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 727341da5d647444e8ce5f971e8f7fe7, type: 3}
 --- !u!1001 &411843438
@@ -294,11 +294,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Bronze)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -353,6 +348,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Bronze)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7995d8db7f36844b441f7e9b5e8a6a, type: 3}
@@ -531,11 +531,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1985399645}
     m_Modifications:
-    - target: {fileID: 2203172452416312247, guid: 4b07315c360a52c42a15c637871b094b,
-        type: 3}
-      propertyPath: m_Name
-      value: Heart 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2203172452416312246, guid: 4b07315c360a52c42a15c637871b094b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -641,6 +636,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2203172452416312247, guid: 4b07315c360a52c42a15c637871b094b,
+        type: 3}
+      propertyPath: m_Name
+      value: Heart 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6395131819337466683, guid: 4b07315c360a52c42a15c637871b094b,
         type: 3}
       propertyPath: position
@@ -704,8 +704,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
@@ -756,11 +754,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6685359793409463124, guid: b7ecf24b20a2c3045ba7c9e3acf71883,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground 3x5
-      objectReference: {fileID: 0}
     - target: {fileID: 6685359793409463122, guid: b7ecf24b20a2c3045ba7c9e3acf71883,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -815,6 +808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685359793409463124, guid: b7ecf24b20a2c3045ba7c9e3acf71883,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground 3x5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7ecf24b20a2c3045ba7c9e3acf71883, type: 3}
@@ -951,11 +949,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8089755682854057098, guid: daf4308761fb25c40baff642eef600c0,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground 3x7
-      objectReference: {fileID: 0}
     - target: {fileID: 8089755682854057096, guid: daf4308761fb25c40baff642eef600c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1011,6 +1004,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8089755682854057098, guid: daf4308761fb25c40baff642eef600c0,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground 3x7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf4308761fb25c40baff642eef600c0, type: 3}
 --- !u!1001 &926469112
@@ -1020,11 +1018,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8089755682854057098, guid: daf4308761fb25c40baff642eef600c0,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground 3x7 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8089755682854057096, guid: daf4308761fb25c40baff642eef600c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1080,6 +1073,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8089755682854057098, guid: daf4308761fb25c40baff642eef600c0,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground 3x7 (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf4308761fb25c40baff642eef600c0, type: 3}
 --- !u!1001 &957796357
@@ -1089,11 +1087,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1985399645}
     m_Modifications:
-    - target: {fileID: 2203172452416312247, guid: 4b07315c360a52c42a15c637871b094b,
-        type: 3}
-      propertyPath: m_Name
-      value: Heart 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2203172452416312246, guid: 4b07315c360a52c42a15c637871b094b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1199,6 +1192,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2203172452416312247, guid: 4b07315c360a52c42a15c637871b094b,
+        type: 3}
+      propertyPath: m_Name
+      value: Heart 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6395131819337466683, guid: 4b07315c360a52c42a15c637871b094b,
         type: 3}
       propertyPath: position
@@ -1213,11 +1211,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2904188583689778864, guid: 9582b4124ad15aa45b9847901b59484f,
-        type: 3}
-      propertyPath: m_Name
-      value: Platform 1x3
-      objectReference: {fileID: 0}
     - target: {fileID: 2904188583689778830, guid: 9582b4124ad15aa45b9847901b59484f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1272,6 +1265,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2904188583689778864, guid: 9582b4124ad15aa45b9847901b59484f,
+        type: 3}
+      propertyPath: m_Name
+      value: Platform 1x3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9582b4124ad15aa45b9847901b59484f, type: 3}
@@ -1363,11 +1361,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: 8969e3ce429c445438144c681bb3932c,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Gold) (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: 8969e3ce429c445438144c681bb3932c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1422,6 +1415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: 8969e3ce429c445438144c681bb3932c,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Gold) (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8969e3ce429c445438144c681bb3932c, type: 3}
@@ -1480,8 +1478,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300028, guid: bf4432d04bb2922449aafb19a3af78b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1644,11 +1640,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5803300073118768857, guid: 074daa5aa72768d479e3383caf18277a,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin Pyramid 3x1 2x3 1x5
-      objectReference: {fileID: 0}
     - target: {fileID: 642920245484270834, guid: 074daa5aa72768d479e3383caf18277a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1704,8 +1695,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5803300073118768857, guid: 074daa5aa72768d479e3383caf18277a,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin Pyramid 3x1 2x3 1x5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 074daa5aa72768d479e3383caf18277a, type: 3}
+--- !u!1 &1404586433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7658759576884718779, guid: 9da6b59a2d1e67e428c387f600c0b727,
+    type: 3}
+  m_PrefabInstance: {fileID: 7658759576916316851}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1404586434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404586433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbd17a6202be8e4baadf8c2b133563c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1001 &1443562448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1919,11 +1934,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Bronze) (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1978,6 +1988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Bronze) (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7995d8db7f36844b441f7e9b5e8a6a, type: 3}
@@ -2037,8 +2052,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 18
@@ -2083,11 +2096,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: 8969e3ce429c445438144c681bb3932c,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Gold)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: 8969e3ce429c445438144c681bb3932c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2143,6 +2151,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: 8969e3ce429c445438144c681bb3932c,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Gold)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8969e3ce429c445438144c681bb3932c, type: 3}
 --- !u!1001 &1815174442
@@ -2152,11 +2165,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8089755682854057098, guid: daf4308761fb25c40baff642eef600c0,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground 3x7 (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8089755682854057096, guid: daf4308761fb25c40baff642eef600c0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2211,6 +2219,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089755682854057098, guid: daf4308761fb25c40baff642eef600c0,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground 3x7 (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daf4308761fb25c40baff642eef600c0, type: 3}
@@ -2548,11 +2561,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Bronze) (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2608,6 +2616,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Bronze) (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7995d8db7f36844b441f7e9b5e8a6a, type: 3}
 --- !u!1 &1985399644
@@ -2661,8 +2674,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8df309b424282b438dac67ce84c80d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 0
   currentHealth: 0
+  totalHealth: 0
 --- !u!1001 &2010687414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2670,11 +2683,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Bronze) (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2730,6 +2738,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: fa7995d8db7f36844b441f7e9b5e8a6a,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Bronze) (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7995d8db7f36844b441f7e9b5e8a6a, type: 3}
 --- !u!1001 &2044848887
@@ -2739,11 +2752,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4042749616715072543, guid: 8b8466ec8f473074ca0509a5efe0ba73,
-        type: 3}
-      propertyPath: m_Name
-      value: Platform 1x5
-      objectReference: {fileID: 0}
     - target: {fileID: 4042749616715072537, guid: 8b8466ec8f473074ca0509a5efe0ba73,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2799,8 +2807,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4042749616715072543, guid: 8b8466ec8f473074ca0509a5efe0ba73,
+        type: 3}
+      propertyPath: m_Name
+      value: Platform 1x5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b8466ec8f473074ca0509a5efe0ba73, type: 3}
+--- !u!1 &2065160106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6522891358562514516, guid: 9577956b258b2f4488de6f3e08a33673,
+    type: 3}
+  m_PrefabInstance: {fileID: 7186957700960386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2065160107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065160106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5fd13dc981fef41ae77186d79c2040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100860708
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,8 +2887,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300156, guid: bf4432d04bb2922449aafb19a3af78b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2882,10 +2911,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7186955738905343, guid: 9577956b258b2f4488de6f3e08a33673, type: 3}
-      propertyPath: m_Name
-      value: Moving SpinSaw
-      objectReference: {fileID: 0}
     - target: {fileID: 7186955738905341, guid: 9577956b258b2f4488de6f3e08a33673, type: 3}
       propertyPath: m_LocalPosition.x
       value: 25.34
@@ -2930,12 +2955,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7186955738905343, guid: 9577956b258b2f4488de6f3e08a33673, type: 3}
+      propertyPath: m_Name
+      value: Moving SpinSaw
+      objectReference: {fileID: 0}
     - target: {fileID: 6063891869256924351, guid: 9577956b258b2f4488de6f3e08a33673,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 940553176476980688, guid: 9577956b258b2f4488de6f3e08a33673, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9577956b258b2f4488de6f3e08a33673, type: 3}
 --- !u!1001 &2203172453426374925
 PrefabInstance:
@@ -2944,11 +2974,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1985399645}
     m_Modifications:
-    - target: {fileID: 2203172452416312247, guid: 4b07315c360a52c42a15c637871b094b,
-        type: 3}
-      propertyPath: m_Name
-      value: Heart 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2203172452416312246, guid: 4b07315c360a52c42a15c637871b094b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3053,6 +3078,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203172452416312247, guid: 4b07315c360a52c42a15c637871b094b,
+        type: 3}
+      propertyPath: m_Name
+      value: Heart 1
       objectReference: {fileID: 0}
     - target: {fileID: 6395131819337466683, guid: 4b07315c360a52c42a15c637871b094b,
         type: 3}
@@ -3206,11 +3236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5770405119965512899, guid: 75ab2ba281e6a5d48b1f94626ca84152,
-        type: 3}
-      propertyPath: m_Name
-      value: Level Manager
-      objectReference: {fileID: 0}
     - target: {fileID: 5770405119965512897, guid: 75ab2ba281e6a5d48b1f94626ca84152,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3276,6 +3301,11 @@ PrefabInstance:
       propertyPath: keyText
       value: 
       objectReference: {fileID: 1672090480}
+    - target: {fileID: 5770405119965512899, guid: 75ab2ba281e6a5d48b1f94626ca84152,
+        type: 3}
+      propertyPath: m_Name
+      value: Level Manager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75ab2ba281e6a5d48b1f94626ca84152, type: 3}
 --- !u!1001 &7658759576916316851
@@ -3285,6 +3315,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7658759576884718779, guid: 9da6b59a2d1e67e428c387f600c0b727,
         type: 3}
       propertyPath: m_Name
@@ -3345,9 +3379,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5561939694816051911, guid: 9da6b59a2d1e67e428c387f600c0b727, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9da6b59a2d1e67e428c387f600c0b727, type: 3}

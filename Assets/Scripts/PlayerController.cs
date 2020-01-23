@@ -1,23 +1,20 @@
 ﻿using System;
 using UnityEngine;
 
-
 public class PlayerController : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
-    private Vector2 currentVelocity;
-    private Vector2 feetContactBox;
+    private Vector2 _currentVelocity;
+    private Vector2 _feetContactBox;
 
-    [HideInInspector]
-    public Rigidbody2D rigidBody;
-    [HideInInspector]
-    public Animator animator;
-    [HideInInspector]
-    public Vector2 size;
-    [HideInInspector]
-    public LevelManager levelManager;
+    [HideInInspector] public Rigidbody2D rigidBody;
+
+    [HideInInspector] public Animator animator;
+
+    [HideInInspector] public Vector2 size;
+
+    [HideInInspector] public LevelManager levelManager;
 
     public float groundedSkin = 0.05f;
     public LayerMask groundLayer;
@@ -27,8 +24,7 @@ public class PlayerController : MonoBehaviour
     public bool invulnerable;
     public bool dead;
 
-    [Range(0.1f, 10f)]
-    public float invulnerabilityWindow;
+    [Range(0.1f, 10f)] public float invulnerabilityWindow;
 
     public Vector3 respawnPosition;
 
@@ -44,7 +40,7 @@ public class PlayerController : MonoBehaviour
         size = GetComponent<BoxCollider2D>().size;
         respawnPosition = transform.position;
         levelManager = FindObjectOfType<LevelManager>();
-        feetContactBox = new Vector2(size.x, groundedSkin);
+        _feetContactBox = new Vector2(size.x, groundedSkin);
     }
 
     private void Update()
@@ -54,39 +50,27 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 boxCenter = (Vector2) transform.position + (size.y + feetContactBox.y) * 0.5f * Vector2.down;
+        var boxCenter = (Vector2) transform.position + (size.y + _feetContactBox.y) * 0.5f * Vector2.down;
 
-        isGrounded = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, groundLayer);
-        isInKillZone = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, killZoneLayer);
+        isGrounded = Physics2D.OverlapBox(boxCenter, _feetContactBox, 0f, groundLayer);
+        isInKillZone = Physics2D.OverlapBox(boxCenter, _feetContactBox, 0f, killZoneLayer);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("KillZone"))
-        {
-            levelManager.RespawnPlayer();
-        }
+        if (other.CompareTag("KillZone")) levelManager.RespawnPlayer();
 
-        if (other.CompareTag("Checkpoint"))
-        {
-            respawnPosition = other.transform.position;
-        }
+        if (other.CompareTag("Checkpoint")) respawnPosition = other.transform.position;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            transform.parent = other.transform;
-        }
+        if (other.gameObject.CompareTag("MovingPlatform")) transform.parent = other.transform;
     }
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("MovingPlatform"))
-        {
-            transform.parent = null;
-        }
+        if (other.gameObject.CompareTag("MovingPlatform")) transform.parent = null;
     }
 
     public void Kill()
@@ -102,5 +86,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
 }
