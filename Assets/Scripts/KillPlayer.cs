@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class KillPlayer : MonoBehaviour
 {
-
     #region Declarations --------------------------------------------------
 
     private LevelManager levelManager;
@@ -26,10 +26,9 @@ public class KillPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelManager.Respawn();
+            levelManager.RespawnPlayer();
         }
     }
 
     #endregion
-
 }

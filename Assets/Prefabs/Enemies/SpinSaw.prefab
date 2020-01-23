@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6529233603990819975}
   - component: {fileID: 6529233603990819972}
   - component: {fileID: 3806913230331680995}
-  - component: {fileID: 6070515817568525934}
+  - component: {fileID: 942391822355363585}
   m_Layer: 0
   m_Name: SpinSaw
   m_TagString: Untagged
@@ -117,7 +117,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.41
---- !u!114 &6070515817568525934
+--- !u!114 &942391822355363585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,6 +126,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6529233603990819973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbd17a6202be8e4baadf8c2b133563c, type: 3}
+  m_Script: {fileID: 11500000, guid: eaf4cd8dec19cb44fbc3011598df91a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

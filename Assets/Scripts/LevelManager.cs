@@ -51,9 +51,10 @@ public class LevelManager : MonoBehaviour
         healthBar.Set(healthBar.totalHealth);
     }
 
-    public void Respawn()
+    public void RespawnPlayer()
     {
-        StartCoroutine(RespawnCo());
+        StartCoroutine(RespawnPlayerCo());
+        StartCoroutine(InvulnerableCo());
     }
 
     public void AddCoins(int count)
@@ -104,21 +105,20 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        if(!player.invulnerable && healthBar.currentHealth <= 0)
-            Respawn();
+        if(healthBar.currentHealth <= 0 && !player.dead)
+            RespawnPlayer();
     }
 
     private IEnumerator InvulnerableCo()
     {
         player.invulnerable = true;
-        float window = healthBar.currentHealth <= 0 ? waitToRespawn + player.invulnerabilityWindow : player.invulnerabilityWindow;
         
-        yield return new WaitForSeconds(window);
+        yield return new WaitForSeconds(player.invulnerabilityWindow);
 
         player.invulnerable = false;
     }
 
-    private IEnumerator RespawnCo()
+    private IEnumerator RespawnPlayerCo()
     {
         Transform playerTransform = player.transform;
 
@@ -128,17 +128,15 @@ public class LevelManager : MonoBehaviour
         Vector3 cameraPosition = mainCamera.transform.position;
         Vector3 effectPosition = player.isInKillZone ? new Vector3(playerPosition.x, cameraPosition.y - mainCamera.orthographicSize) : playerPosition;
 
-        player.invulnerable = true;
-        player.gameObject.SetActive(false);
+        player.Kill();
         Instantiate(deathEffect, effectPosition, playerRotation);
 
         yield return new WaitForSeconds(waitToRespawn);
 
         player.transform.position = player.respawnPosition;
-        player.gameObject.SetActive(true);
+        player.Respawn();
 
         SetHealthMax();
-        player.invulnerable = false;
         SetCoinCount((int) Math.Ceiling((float) coinCount / 2));
     }
 

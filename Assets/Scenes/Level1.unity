@@ -363,11 +363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: 7a49de6365969dc47b0ca7a44879f109,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Silver)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: 7a49de6365969dc47b0ca7a44879f109,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -422,6 +417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: 7a49de6365969dc47b0ca7a44879f109,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Silver)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a49de6365969dc47b0ca7a44879f109, type: 3}
@@ -1506,11 +1506,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: 7a49de6365969dc47b0ca7a44879f109,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Silver) (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: 7a49de6365969dc47b0ca7a44879f109,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1565,6 +1560,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: 7a49de6365969dc47b0ca7a44879f109,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Silver) (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a49de6365969dc47b0ca7a44879f109, type: 3}
@@ -1713,11 +1713,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8955409397059159700, guid: 7a49de6365969dc47b0ca7a44879f109,
-        type: 3}
-      propertyPath: m_Name
-      value: Coin (Silver) (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 8311197171757149033, guid: 7a49de6365969dc47b0ca7a44879f109,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1772,6 +1767,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955409397059159700, guid: 7a49de6365969dc47b0ca7a44879f109,
+        type: 3}
+      propertyPath: m_Name
+      value: Coin (Silver) (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a49de6365969dc47b0ca7a44879f109, type: 3}
@@ -2373,6 +2373,7 @@ MonoBehaviour:
   isGrounded: 0
   isInKillZone: 0
   invulnerable: 0
+  dead: 0
   invulnerabilityWindow: 2
   respawnPosition: {x: 0, y: 0, z: 0}
 --- !u!95 &1864110965
@@ -2929,6 +2930,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6063891869256924351, guid: 9577956b258b2f4488de6f3e08a33673,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9577956b258b2f4488de6f3e08a33673, type: 3}
 --- !u!1001 &2203172453426374925
@@ -3337,6 +3343,10 @@ PrefabInstance:
     - target: {fileID: 7658759576884718783, guid: 9da6b59a2d1e67e428c387f600c0b727,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public bool isInKillZone;
     public bool invulnerable;
+    public bool dead;
 
     [Range(0.1f, 10f)]
     public float invulnerabilityWindow;
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("KillZone"))
         {
-            levelManager.Respawn();
+            levelManager.RespawnPlayer();
         }
 
         if (other.CompareTag("Checkpoint"))
@@ -86,6 +87,18 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent = null;
         }
+    }
+
+    public void Kill()
+    {
+        gameObject.SetActive(false);
+        dead = true;
+    }
+
+    public void Respawn()
+    {
+        gameObject.SetActive(true);
+        dead = false;
     }
 
     #endregion
