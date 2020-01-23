@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 
 
-public class HurtPlayer : MonoBehaviour
+public class KillPlayer : MonoBehaviour
 {
 
     #region Declarations --------------------------------------------------
 
     private LevelManager levelManager;
-    public int damage;
 
     #endregion
 
@@ -27,7 +26,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            levelManager.RemoveHealth(damage);
+            levelManager.Respawn();
         }
     }
 

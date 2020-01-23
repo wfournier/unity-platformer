@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
     {
         Set(currentHealth - value);
     }
-
+    
     public void Set(int value)
     {
         if (value <= 0)

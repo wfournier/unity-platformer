@@ -104,8 +104,8 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        // if(!player.invulnerable && healthBar.currentHealth <= 0)
-        //     Respawn();
+        if(!player.invulnerable && healthBar.currentHealth <= 0)
+            Respawn();
     }
 
     private IEnumerator InvulnerableCo()
