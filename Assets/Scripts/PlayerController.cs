@@ -1,73 +1,70 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class PlayerController : MonoBehaviour
 {
 
-    private Rigidbody2D myRigidbody;
-    private Animator myAnimator;
+    #region Declarations --------------------------------------------------
 
     private Vector2 currentVelocity;
+    private Vector2 feetContactBox;
 
-    public float moveSpeed;
-    public float jumpSpeed;
+    [HideInInspector]
+    public Rigidbody2D rigidBody;
+    [HideInInspector]
+    public Animator animator;
+    [HideInInspector]
+    public Vector2 size;
+    [HideInInspector]
+    public LevelManager levelManager;
 
-    public Transform groundCheck;
-    public float groundCheckRadius;
+    public float groundedSkin = 0.05f;
     public LayerMask groundLayer;
+    public LayerMask killZoneLayer;
     public bool isGrounded;
+    public bool isInKillZone;
+    public bool invulnerable;
+    public bool dead;
+
+    [Range(0.1f, 10f)]
+    public float invulnerabilityWindow;
 
     public Vector3 respawnPosition;
 
-    public LevelManager levelManager;
+    #endregion
 
-    // Start is called before the first frame update
-    void Start()
+
+    #region Private/Protected Methods -------------------------------------
+
+    private void Awake()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
-        myAnimator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        size = GetComponent<BoxCollider2D>().size;
         respawnPosition = transform.position;
         levelManager = FindObjectOfType<LevelManager>();
+        feetContactBox = new Vector2(size.x, groundedSkin);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        currentVelocity = myRigidbody.velocity;
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        if (Input.GetAxisRaw("Horizontal") > 0f) // RIGHT
-        {
-            myRigidbody.velocity = new Vector2(moveSpeed, currentVelocity.y);
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-        else if (Input.GetAxisRaw("Horizontal") < 0f) // LEFT
-        {
-            myRigidbody.velocity = new Vector2(-moveSpeed, currentVelocity.y);
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else // NEUTRAL
-        {
-            myRigidbody.velocity = new Vector2(0f, currentVelocity.y);
-        }
-
-        if (Input.GetButtonDown("Jump") && isGrounded) // JUMP
-        {
-            myRigidbody.velocity = Vector2.up * jumpSpeed;
-        }
-
-        myAnimator.SetFloat("Speed", Math.Abs(currentVelocity.x));
-        myAnimator.SetBool("Grounded", isGrounded);
+        animator.SetFloat("SpeedX", Math.Abs(rigidBody.velocity.x));
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void FixedUpdate()
+    {
+        Vector2 boxCenter = (Vector2) transform.position + (size.y + feetContactBox.y) * 0.5f * Vector2.down;
+
+        isGrounded = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, groundLayer);
+        isInKillZone = Physics2D.OverlapBox(boxCenter, feetContactBox, 0f, killZoneLayer);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("KillZone"))
         {
-            levelManager.Respawn();
+            levelManager.RespawnPlayer();
         }
 
         if (other.CompareTag("Checkpoint"))
@@ -75,5 +72,35 @@ public class PlayerController : MonoBehaviour
             respawnPosition = other.transform.position;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("MovingPlatform"))
+        {
+            transform.parent = null;
+        }
+    }
+
+    public void Kill()
+    {
+        gameObject.SetActive(false);
+        dead = true;
+    }
+
+    public void Respawn()
+    {
+        gameObject.SetActive(true);
+        dead = false;
+    }
+
+    #endregion
 
 }
